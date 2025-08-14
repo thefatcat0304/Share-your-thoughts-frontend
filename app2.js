@@ -1,4 +1,4 @@
-var commentApi = "http://localhost:3000/courses"
+var commentApi = "https://share-your-thoughts-backend.onrender.com"
 
 start()
 
@@ -76,7 +76,7 @@ function handleDeleteComment(id) {
             return response.json()
         })
         .then(function () {
-            var commentItem = document.querySelector(".comment-item" + id)
+            var commentItem = document.querySelector(".comment-item-" + id)
             if (commentItem) {
                 commentItem.remove()
             }
@@ -160,4 +160,5 @@ function updateCommentTime() {
         const timestamp = commentTime.getAttribute("data-timestamp")
         commentTime.textContent = timeAgo(timestamp)
     })
+
 }
